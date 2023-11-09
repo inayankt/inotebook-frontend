@@ -29,10 +29,10 @@ function Navbar() {
 
           <div className="dropdown text-end">
             <a href="#" className="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              <i className="fa-solid fa-user" style={{fontSize: "1.25rem"}}></i>
+              <i className="fa-solid fa-user" style={{fontSize: "1.25rem", color: "#0D6EFD", color: "black"}}></i>
             </a>
             <ul className="dropdown-menu text-small">
-              <li><Link className="dropdown-item" to="/profile">Hello, {user.details.name}!</Link></li>
+              <li><Link className="dropdown-item" to="/profile">Hi, {user.details.name}!</Link></li>
               <li><hr className="dropdown-divider" /></li>
               <li><button className="dropdown-item" onClick={handleSignOut}>Sign out</button></li>
             </ul>

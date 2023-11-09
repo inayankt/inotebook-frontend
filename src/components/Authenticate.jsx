@@ -23,7 +23,7 @@ function Authenticate() {
   };
   const handleSignupChange = (e) => {
     if(e.target.name === "remember") {
-      return setSignInData(prevData => {
+      return setSignUpData(prevData => {
         return {...prevData, [e.target.name]: e.target.checked}
       });
     }
@@ -84,25 +84,25 @@ function Authenticate() {
         <div className="row form-row">
           <form className="col-12 col-sm-5 form-col">
             <center><h5>Sign in</h5></center>
-            <input name="email" type="email" className="form-control input-common" placeholder="example@email.com" value={signInData.email} onChange={handleSigninChange} required />
-            <input name="password" type="password" className="form-control input-common" placeholder="Password" value={signInData.password} onChange={handleSigninChange} required />
+            <input name="email" type="email" className="form-control input-common form-height" placeholder="example@email.com" value={signInData.email} onChange={handleSigninChange} required />
+            <input name="password" type="password" className="form-control input-common form-height" placeholder="Password" value={signInData.password} onChange={handleSigninChange} required />
             <div className="remember-div">
               <input type="checkbox" name="remember" checked={signInData.remember} onChange={handleSigninChange} />
               <label htmlFor="checkbox">Remember me</label>
             </div>
-            <button type="submit" className="btn btn-primary auth-main-btn" onClick={handleSignIn}>Sign in</button>
+            <button type="submit" className="btn btn-primary auth-main-btn form-height" onClick={handleSignIn}>Sign in</button>
           </form>
           <div className="col-12 col-sm-2 form-mid-col text-muted"><span>or</span></div>
           <form className="col-12 col-sm-5 form-col">
             <center><h5>Sign up</h5></center>
-            <input name="name" type="text" className="form-control input-common" placeholder="Name" value={signUpData.name} onChange={handleSignupChange} required />
-            <input name="email" type="email" className="form-control input-common" placeholder="example@email.com" value={signUpData.email} onChange={handleSignupChange} required />
-            <input name="password" type="password" className="form-control input-common" placeholder="Password" value={signUpData.password} onChange={handleSignupChange} required />
+            <input name="name" type="text" className="form-control input-common form-height" placeholder="Name" value={signUpData.name} onChange={handleSignupChange} required />
+            <input name="email" type="email" className="form-control input-common form-height" placeholder="example@email.com" value={signUpData.email} onChange={handleSignupChange} required />
+            <input name="password" type="password" className="form-control input-common form-height" placeholder="Password" value={signUpData.password} onChange={handleSignupChange} required />
             <div className="remember-div">
               <input type="checkbox" name="remember" checked={signUpData.remember} onChange={handleSignupChange} />
               <label htmlFor="checkbox">Remember me</label>
             </div>
-            <button type="submit" className="btn btn-primary auth-main-btn" onClick={handleSignUp}>Sign up</button>
+            <button type="submit" className="btn btn-primary auth-main-btn form-height" onClick={handleSignUp}>Sign up</button>
           </form>
         </div>
       </div>
