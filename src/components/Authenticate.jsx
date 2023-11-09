@@ -9,14 +9,24 @@ function Authenticate() {
   const loader = useContext(LoaderContext);
   const user = useContext(UserContext);
   const api_url = useContext(ApiContext);
-  const [signInData, setSignInData] = useState({email: "", password: ""});
-  const [signUpData, setSignUpData] = useState({name: "",email: "", password: ""});
+  const [signInData, setSignInData] = useState({email: "", password: "", remember: false});
+  const [signUpData, setSignUpData] = useState({name: "",email: "", password: "", remember: false});
   const handleSigninChange = (e) => {
+    if(e.target.name === "remember") {
+      return setSignInData(prevData => {
+        return {...prevData, [e.target.name]: e.target.checked}
+      });
+    }
     setSignInData(prevData => {
       return {...prevData, [e.target.name]: e.target.value}
     });
   };
   const handleSignupChange = (e) => {
+    if(e.target.name === "remember") {
+      return setSignInData(prevData => {
+        return {...prevData, [e.target.name]: e.target.checked}
+      });
+    }
     setSignUpData(prevData => {
       return {...prevData, [e.target.name]: e.target.value}
     });
@@ -31,7 +41,7 @@ function Authenticate() {
         }
       });
       loader.setProgress(60);
-      localStorage.setItem("user", response.data.authToken);
+      if(signInData.remember) localStorage.setItem("user", response.data.authToken);
       loader.setProgress(80);
       user.setToken(response.data.authToken);
     } catch(err) {
@@ -53,7 +63,7 @@ function Authenticate() {
         }
       });
       loader.setProgress(60)
-      localStorage.setItem("user", response.data.authToken);
+      if(signUpData.remember) localStorage.setItem("user", response.data.authToken);
       loader.setProgress(80);
       user.setToken(response.data.authToken);
     } catch(err) {
@@ -66,10 +76,6 @@ function Authenticate() {
     loader.setProgress(100);
   };
   return (
-    // <div>
-    //   Authenticate
-    //   <button className="btn btn-primary mx-2" onClick={signin}>Sign in</button>
-    // </div>
     <div className="auth-container">
       {error && <div className="error-msg">{error}</div>}
       <div className="container auth-sub-container">
@@ -80,14 +86,22 @@ function Authenticate() {
             <center><h5>Sign in</h5></center>
             <input name="email" type="email" className="form-control input-common" placeholder="example@email.com" value={signInData.email} onChange={handleSigninChange} required />
             <input name="password" type="password" className="form-control input-common" placeholder="Password" value={signInData.password} onChange={handleSigninChange} required />
+            <div className="remember-div">
+              <input type="checkbox" name="remember" checked={signInData.remember} onChange={handleSigninChange} />
+              <label htmlFor="checkbox">Remember me</label>
+            </div>
             <button type="submit" className="btn btn-primary auth-main-btn" onClick={handleSignIn}>Sign in</button>
           </form>
-          <div className="col-12 col-sm-2 form-mid-col"><span>or</span></div>
+          <div className="col-12 col-sm-2 form-mid-col text-muted"><span>or</span></div>
           <form className="col-12 col-sm-5 form-col">
             <center><h5>Sign up</h5></center>
             <input name="name" type="text" className="form-control input-common" placeholder="Name" value={signUpData.name} onChange={handleSignupChange} required />
             <input name="email" type="email" className="form-control input-common" placeholder="example@email.com" value={signUpData.email} onChange={handleSignupChange} required />
             <input name="password" type="password" className="form-control input-common" placeholder="Password" value={signUpData.password} onChange={handleSignupChange} required />
+            <div className="remember-div">
+              <input type="checkbox" name="remember" checked={signUpData.remember} onChange={handleSignupChange} />
+              <label htmlFor="checkbox">Remember me</label>
+            </div>
             <button type="submit" className="btn btn-primary auth-main-btn" onClick={handleSignUp}>Sign up</button>
           </form>
         </div>

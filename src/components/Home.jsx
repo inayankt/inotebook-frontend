@@ -36,8 +36,8 @@ function Home() {
   }, []);
   return (
     <div>
-      Home | Hi {user.details.name} | {user.details.email}
-      <div>
+      Home
+      {/* <div>
         {notes.notes.map((note) => {
           return (
             <div key={note._id}>
@@ -47,7 +47,7 @@ function Home() {
             </div>
           )
         })}
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -13,13 +13,13 @@
 }
 
 .auth-sub-container{
-  /* background-color: aliceblue; */
+  /* background-color: #f9f9f984; */
   border: 1px solid rgb(215, 215, 215);
   border-radius: 20px;
   box-shadow: 0 5px 15px 0 rgb(215, 215, 215);
   width: 90%;
-  max-width: 800px;
-  padding: 20px 30px;
+  max-width: 850px;
+  padding: 30px 40px;
 }
 
 .form-row{
@@ -44,6 +44,11 @@
 
 .input-common{
   width: 100%;
+}
+
+.remember-div{
+  display: flex;
+  gap: 3px;
 }
 
 .auth-main-btn{
