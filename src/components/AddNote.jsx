@@ -1,12 +1,12 @@
 import React from "react";
 
-function NoteCard() {
+function AddNote(props) {
   return (
-    <div className="add-note-card">
+    <button type="button" onClick={() => props.setModalNote({})} data-bs-toggle="modal" data-bs-target="#addNoteModal" className="add-note-card">
       <div><i class="fa-solid fa-plus"></i></div>
       <div>Add a note</div>
-    </div>
+    </button>
   );
 }
 
-export default NoteCard;
+export default AddNote;

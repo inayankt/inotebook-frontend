@@ -6,6 +6,24 @@
   --note-card-border-radius: 10px;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  display: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #88888871;
+  border-radius: 30px;
+  transition: all 300ms ease-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
 .auth-container{
   /* background-color: red; */
   width: 100vw;
@@ -19,6 +37,7 @@
 .auth-sub-container{
   /* background-color: #f9f9f984; */
   border: 1px solid rgb(215, 215, 215);
+  margin: 20px 0;
   border-radius: 20px;
   box-shadow: 0 5px 15px 0 rgb(215, 215, 215);
   width: 90%;
@@ -68,14 +87,20 @@
 }
 
 .error-msg{
-  position: absolute;
+  position: fixed;
+  z-index: 1000;
+  margin: auto;
   top: 15px;
-  background-color: rgb(255, 126, 126);
+  background-color: rgb(255, 179, 179);
   padding: 10px 15px;
   border-radius: 10px;
   border: solid 1px rgba(0, 0, 0, 0.289);
   box-shadow: 0 5px 10px 0 rgb(215, 215, 215);
   transition: all 500ms ease-in-out;
+}
+
+.success-msg{
+  background-color: rgb(180, 255, 180);
 }
 
 .notes-filter-div{
@@ -95,7 +120,7 @@
   padding: 0;
   height: 200px;
   border-radius: var(--note-card-border-radius);
-  box-shadow: 0 5px 15px 0 rgb(215, 215, 215);
+  /* box-shadow: 0 5px 15px 0 rgb(215, 215, 215); */
 }
 
 .card-top{
@@ -109,8 +134,8 @@
 }
 
 .card-bottom{
-  padding: 0 15px;
-  padding-bottom: 20px;
+  padding: 9px 15px;
+  /* padding-bottom: 20px; */
   height: calc(100% - 80px);
   border-bottom-left-radius: var(--note-card-border-radius);
   border-bottom-right-radius: var(--note-card-border-radius);
@@ -120,7 +145,9 @@
 }
 
 .card-top > div{
-  width: calc(100% - 60px);
+  width: calc(100% - 70px);
+  /* color: rgb(81, 81, 81); */
+  letter-spacing: 0.5px;
 }
 
 .card-top > div > small{
@@ -129,12 +156,28 @@
 }
 
 .top-right{
-  width: 60px;
+  width: 70px;
   display: flex;
+  gap: 10px;
   height: 100%;
   align-items: flex-start;
   justify-content: center;
-  font-size: 1.05rem;
+  font-size: 1.2rem;
+  /* background: red; */
+  position: relative;
+  top: 5px;
+}
+
+.top-right > button{
+  /* color: #0D6EFD; */
+  color: rgb(81, 81, 81);
+  transition: all 300ms ease-out;
+  border-radius: 50%;
+}
+
+.top-right > button:hover{
+  color: rgb(145, 145, 145);
+  box-shadow: 0 0 50px 0 rgb(200, 200, 200);
 }
 
 .card-bottom span{
@@ -148,6 +191,8 @@
 }
 
 .add-note-card{
+  background: none;
+  outline: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -156,8 +201,27 @@
   height: 200px;
   margin: 10px;
   border-radius: var(--note-card-border-radius);
-  border: 3px dashed rgb(215, 215, 215);
-  font-size: 2.5rem;
+  border: 5px dashed rgb(215, 215, 215);
+  font-size: 2.25rem;
   color: rgb(215, 215, 215);
   cursor: pointer;
+  transition: all 300ms ease-out;
+}
+
+.add-note-card:hover{
+  font-size: 2.5rem;
+}
+
+.add-note-card > div{
+  text-align: center;
+}
+
+@media only screen and (max-width: 770px) {
+  .notes-container{
+    flex-direction: column;
+  }
+
+  .note-card, .add-note-card{
+    width: calc(100% - 20px);
+  }
 }
