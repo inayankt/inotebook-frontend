@@ -87,7 +87,7 @@ A web app where notes can be saved and retrieved from on the go. Users need to s
 - Visual Studio Code is preferred for this guide. Download it from [here](https://code.visualstudio.com/download).
 - The backend part of the project must be running on your computer. Click [here]() to view the guide.
 
-### `Getting started`
+### Getting started
 
 Open terminal in your computer and run the following commands
 ```
@@ -97,8 +97,7 @@ npm install
 code .
 ```
 
-Make a new `.env` file which will contain the environment variables in the same format as given in `.env.example` file.
-Then run
+The project folder will open in VS code. Make a new `.env` file which will contain the environment variables in the same format as given in `.env.example` file. Then run
 ```
 npm start
 ```
