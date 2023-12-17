@@ -6,6 +6,11 @@ This is the frontend part of iNoteBook project.
 
 A web app where notes can be saved and retrieved from on the go. Users need to signin/signup with their account and can start saving notes.
 
+## Tech Stack
+
+- ReactJS
+- Bootstrap
+
 ## How to run the react app
 
 ### Prerequisites
