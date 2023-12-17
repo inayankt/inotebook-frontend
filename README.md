@@ -82,10 +82,10 @@ A web app where notes can be saved and retrieved from on the go. Users need to s
 
 ### Prerequisites
 
-> NodeJS should be installed on your computer. Download it from [here](https://nodejs.org/en/download).
-> MongoDB should be installed on your computer. Downlaod it from [here](https://www.mongodb.com/try/download/community) (select `Community Server` and download).
-> Visual Studio Code is preferred for this guide. Download it from [here](https://code.visualstudio.com/download).
-> The backend part of the project must be running on your computer. Click [here]() to view the guide.
+- NodeJS should be installed on your computer. Download it from [here](https://nodejs.org/en/download).
+- MongoDB should be installed on your computer. Downlaod it from [here](https://www.mongodb.com/try/download/community) (select `Community Server` and download).
+- Visual Studio Code is preferred for this guide. Download it from [here](https://code.visualstudio.com/download).
+- The backend part of the project must be running on your computer. Click [here]() to view the guide.
 
 ### `Getting started`
 
