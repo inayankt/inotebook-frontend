@@ -82,4 +82,7 @@ A web app where notes can be saved and retrieved from on the go. Users need to s
 
 ### `Getting started`
 
-Open terminal in your PC and run ```git clone https://github.com/inayankt/inotebook-frontend/```
+Open terminal in your PC and run
+```
+git clone https://github.com/inayankt/inotebook-frontend/
+```
